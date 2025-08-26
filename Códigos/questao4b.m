@@ -2,7 +2,7 @@ clc
 clear
 close all
 
-% --- Função do sistema do Pêndulo Amortecido ---
+% Função do sistema do Pêndulo Amortecido
 function dxdt = pendulo(t,x,zeta)
     dxdt = [x(2); -2*zeta*x(2) - sin(x(1))];
 end
@@ -67,4 +67,5 @@ plot(pi,0,'rs','MarkerFaceColor','r','MarkerSize',8)  % Instável
 plot(-pi,0,'rs','MarkerFaceColor','r','MarkerSize',8) % Instável
 
 legend('Estável (0,0)','Instável (±π,0)')
+
 hold off
