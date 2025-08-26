@@ -2,7 +2,7 @@ clc
 clear
 close all
 
-% --- Função do sistema de Duffing ---
+% Função do sistema de Duffing 
 function xout = duffing(t,x,alfa,beta,zeta,gama,We) 
     xout = [x(2) ; -2*zeta*x(2) + alfa*x(1) - beta*x(1)^3 + gama*sin(We*t)];
 end
@@ -75,4 +75,5 @@ plot(eq_points(3,1), eq_points(3,2), 'ko','MarkerFaceColor','b','MarkerSize',8) 
 
 legend('Sela (instável)','Espirais estáveis')
 hold off
+
 
