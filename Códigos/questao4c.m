@@ -2,7 +2,7 @@ clc
 clear
 close all
 
-% --- Parâmetros do sistema (da sua imagem 1) ---
+% Parâmetros do sistema
 z1 = 0.05;
 z2 = 0.08;
 a1 = -2;
@@ -12,7 +12,7 @@ b2 = 1.5;
 rho = 0.5;
 Os = 3;
 
-% --- Função em espaço de estados ---
+% Função em espaço de estados 
 function dxdt = sistema2GDL(t,X,z1,z2,a1,a2,b1,b2,rho,Os)
     x1 = X(1); v1 = X(2);
     x2 = X(3); v2 = X(4);
@@ -155,7 +155,7 @@ xlabel('$x_2$','Interpreter','latex')
 ylabel('$\dot{x}_2$','Interpreter','latex')
 title('Bacia de Atração - Sistema 2 GDL')
 
-% --- Marcar equilíbrios ---
+% Marcar equilíbrios 
 % extremos (estáveis) -> círculos
 plot(eq_points([1 3],1), eq_points([1 3],3), 'ko', ...
     'MarkerFaceColor','y','MarkerSize',8)
@@ -165,5 +165,6 @@ plot(eq_points(2,1), eq_points(2,3), 'k^', ...
     'MarkerFaceColor','r','MarkerSize',9)
 
 legend('Espirais Estáveis','Sela Instável')
+
 
 hold off
