@@ -1,4 +1,3 @@
-% brinson_SMA_cycle_tempConst.m
 % Ciclo memória de forma com temperatura constante
 clear; close all; clc;
 
@@ -16,7 +15,7 @@ C_A = 13.8;  % MPa/°C
 sigma_s_cr = 100; % MPa
 sigma_f_cr = 170; % MPa
 
-%% Tempo e carregamento
+% Tempo e carregamento
 Tend = 8; dt = 0.02;
 time = (0:dt:Tend)';
 
@@ -38,7 +37,7 @@ end
 theta_const = 60; % °C
 theta = theta_const * ones(size(time));
 
-%% Estados
+% Estados
 eps = zeros(size(time));
 betaS = zeros(size(time));
 betaT = zeros(size(time));
@@ -55,7 +54,7 @@ betaS0 = betaS(1);
 betaT0 = betaT(1);
 beta0  = betaS0 + betaT0;
 
-%% Loop de integração
+% Loop de integração
 for k = 2:length(time)
     s_app = sigma(k);
     th = theta(k);
@@ -92,7 +91,7 @@ for k = 2:length(time)
     end
 end
 
-%% Gráficos
+% Gráficos
 figure;
 %subplot(2,2,1);
 yyaxis left; plot(time,sigma,'k','LineWidth',1.2); ylabel('\sigma (MPa)');
@@ -156,4 +155,5 @@ function [betaS_new, betaT_new] = update_betas(betaS_prev, betaT_prev, sigma_eff
     % Limitadores
     betaS_new = min(max(betaS_new,0),1);
     betaT_new = min(max(betaT_new,0),1);
+
 end
