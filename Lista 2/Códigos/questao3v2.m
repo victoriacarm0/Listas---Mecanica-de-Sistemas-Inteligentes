@@ -115,7 +115,7 @@ for a_idx = 1:length(A_values)
 
 
 
-    % ----------- Cálculo da largura de banda -----------
+    % Cálculo da largura de banda 
     BW_linear = calcBandwidth(omega_range,Pm_linear);
     BW_biestavel = calcBandwidth(omega_range,Pm_biestavel);
     BW_naosuave = arrayfun(@(i) calcBandwidth(omega_range,Pm_naosuave(i,:)),1:length(g_values));
@@ -154,4 +154,5 @@ for a_idx = 1:length(A_values)
     ylabel('v(t) [V]');
     title(['Resposta em tensão v(t) - A = ' num2str(A)]);
     legend(leg,'Location','Best');
+
 end
